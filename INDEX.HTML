@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SemaLink Kenya Chat Earners</title>
+  <link rel="stylesheet" href="style.css" />
+   <script src="script.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">SemaLink</div>
+      <h1>Chat with foreigners and earn from Kenya</h1>
+      <p>Create an account, pay KES 300 activation fee, then access your full chatting dashboard.</p>
+
+      <div class="fee-card">
+        <span>Activation Fee</span>
+        <strong>KES 300</strong>
+        <small>Till Number: 4136540</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h2 id="pageTitle">Kenyan Earner Portal</h2>
+          <p id="pageSubtitle">Create an account or login to continue</p>
+        </div>
+        <span id="statusBadge" class="badge">Not logged in</span>
+      </header>
+
+      <!-- AUTH SCREEN -->
+      <section id="authScreen" class="screen active">
+        <div class="auth-grid">
+          <div>
+            <p class="label">Step 1</p>
+            <h2>Create your account</h2>
+            <p class="muted">
+              Kenyan users must register first. After login, first-time users must pay the KES 300 activation fee.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="tabs">
+              <button id="showRegister" class="tab active">Create Account</button>
+              <button id="showLogin" class="tab">Login</button>
+            </div>
+
+            <form id="registerForm">
+              <label>
+                Full Name
+                <input id="regName" type="text" placeholder="Example: Brian Otieno" required />
+              </label>
+
+              <label>
+                Phone Number
+                <input id="regPhone" type="tel" placeholder="+2547..." required />
+              </label>
+
+              <label>
+                County
+                <select id="regCounty">
+                  <option>Nairobi</option>
+                  <option>Mombasa</option>
+                  <option>Kisumu</option>
+                  <option>Nakuru</option>
+                  <option>Kiambu</option>
+                  <option>Other</option>
+                </select>
+              </label>
+
+              <label>
+                Password
+                <input id="regPassword" type="password" placeholder="Create password" required />
+              </label>
+
+              <button class="btn primary" type="submit">Create Account</button>
+            </form>
+
+            <form id="loginForm" class="hidden">
+              <label>
+                Phone Number
+                <input id="loginPhone" type="tel" placeholder="+2547..." />
+              </label>
+
+              <label>
+                Password
+                <input id="loginPassword" type="password" placeholder="Your password" />
+              </label>
+
+              <button class="btn primary" type="submit">Login</button>
+            </form>
+
+            <p id="authMessage" class="message"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVATION SCREEN -->
+      <section id="activationScreen" class="screen">
+        <div class="activation-wrap">
+          <p class="label">Step 2</p>
+          <h2>Activate your account</h2>
+          <p class="muted">
+            Pay the one-time activation fee before accessing the full chatting dashboard.
+          </p>
+
+          <div class="activation-grid">
+            <div class="activation-box">
+              <span>Pay</span>
+              <strong>KES 300</strong>
+              <p>Till Number: <b>4136540</b></p>
+            </div>
+
+            <div class="card">
+              <h3>Payment Details</h3>
+              <p class="muted">Use M-Pesa Buy Goods and Services.</p>
+
+              <div class="pay-info">
+                <div>
+                  <span>Till Number</span>
+                  <strong>4136540</strong>
+                </div>
+                <div>
+                  <span>Amount</span>
+                  <strong>KES 300</strong>
+                </div>
+              </div>
+
+              <label>
+                M-Pesa Phone Number
+                <input id="mpesaPhone" type="tel" placeholder="+2547..." />
+              </label>
+
+              <label>
+                M-Pesa Confirmation Code
+                <input id="mpesaCode" type="text" placeholder="Example: TGS45X9K" />
+              </label>
+
+              <button id="activateBtn" class="btn primary">Confirm Activation</button>
+              <p class="note">
+                Demo mode: this confirms activation automatically. Real app should verify the payment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DASHBOARD SCREEN -->
+      <section id="dashboardScreen" class="screen">
+        <div class="dashboard">
+          <nav class="dash-menu card">
+            <button class="menu-btn active" data-view="homeView">Dashboard</button>
+            <button class="menu-btn" data-view="chatsView">Chats</button>
+            <button class="menu-btn" data-view="earningsView">Earnings</button>
+            <button class="menu-btn" data-view="withdrawView">Withdraw</button>
+            <button id="logoutBtn" class="menu-btn danger">Logout</button>
+          </nav>
+
+          <div class="dash-content">
+            <div id="homeView" class="dash-view active">
+              <div class="stats">
+                <div class="stat-card">
+                  <span>Available Balance</span>
+                  <strong id="balanceText">KES 1,240</strong>
+                </div>
+                <div class="stat-card">
+                  <span>Active Chats</span>
+                  <strong>3</strong>
+                </div>
+                <div class="stat-card">
+                  <span>Rating</span>
+                  <strong>4.8</strong>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3>Foreigners Waiting to Chat</h3>
+
+                <div class="chat-request">
+                  <div class="avatar">EM</div>
+                  <div>
+                    <strong>Emily from Canada</strong>
+                    <p>Wants basic Swahili greetings.</p>
+                  </div>
+                  <span>KES 180</span>
+                </div>
+
+                <div class="chat-request">
+                  <div class="avatar gold">JA</div>
+                  <div>
+                    <strong>James from UK</strong>
+                    <p>Needs travel Swahili before visiting Nairobi.</p>
+                  </div>
+                  <span>KES 300</span>
+                </div>
+
+                <div class="chat-request">
+                  <div class="avatar red">SO</div>
+                  <div>
+                    <strong>Sofia from Spain</strong>
+                    <p>Wants pronunciation help.</p>
+                  </div>
+                  <span>KES 450</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="chatsView" class="dash-view">
+              <div class="card chat-box">
+                <h3>Live Chat Preview</h3>
+
+                <div id="messages" class="messages">
+                  <div class="bubble">Hi, how do I say good morning in Swahili?</div>
+                  <div class="bubble me">You can say habari ya asubuhi.</div>
+                  <div class="bubble">Great. What should I reply?</div>
+                </div>
+
+                <div class="send-row">
+                  <input id="chatInput" type="text" placeholder="Type your reply..." />
+                  <button id="sendBtn" class="btn primary">Send</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="earningsView" class="dash-view">
+              <div class="card">
+                <h3>Earnings</h3>
+                <div class="earning-row">
+                  <span>Today</span>
+                  <strong>KES 780</strong>
+                </div>
+                <div class="earning-row">
+                  <span>This Week</span>
+                  <strong>KES 3,420</strong>
+                </div>
+                <div class="earning-row">
+                  <span>Available</span>
+                  <strong>KES 1,240</strong>
+                </div>
+              </div>
+            </div>
+
+            <div id="withdrawView" class="dash-view">
+              <div class="card">
+                <h3>Withdraw Money</h3>
+                <p class="muted">Withdraw your available earnings to M-Pesa.</p>
+
+                <label>
+                  M-Pesa Number
+                  <input id="withdrawPhone" type="tel" placeholder="+2547..." />
+                </label>
+
+                <label>
+                  Amount
+                  <input id="withdrawAmount" type="number" placeholder="Example: 500" />
+                </label>
+
+                <button id="withdrawBtn" class="btn primary">Request Withdrawal</button>
+                <p id="withdrawMessage" class="message"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
